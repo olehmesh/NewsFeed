@@ -10,6 +10,7 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.olehmesh.newsfeed.R
 import com.olehmesh.newsfeed.databinding.MainListItemBinding
+import com.olehmesh.newsfeed.utils.Constants
 import com.olehmesh.newsfeed.utils.DiffUtilCallBack
 import com.olehmesh.repository.models.NewsModel
 import kotlinx.android.extensions.LayoutContainer
@@ -42,9 +43,9 @@ class MainAdapter : PagedListAdapter<NewsModel, MainAdapter.ItemViewHolder>(Diff
 
             val bundle = Bundle()
 
-            bundle.putString("title", mList?.title)
-            bundle.putString("text", mList?.text)
-            bundle.putString("image", mList?.image_url)
+            bundle.putString(Constants.TITLE_NEWS, mList?.title)
+            bundle.putString(Constants.DESC_NEWS, mList?.text)
+            bundle.putString(Constants.IMAGE_NEWS, mList?.image_url)
 
             navController.navigate(
                 R.id.fragment_detail,

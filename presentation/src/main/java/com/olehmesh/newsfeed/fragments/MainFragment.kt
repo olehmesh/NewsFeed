@@ -33,17 +33,12 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         mainAdapter = MainAdapter()
-    //    recyclerMain.apply {
-           // layoutManager = LinearLayoutManager(context)
-          //  recyclerMain.adapter = adapter
-          //  itemDecorate()
-      //  }
-//tvTitle.
-     //   tvTitle.ellipsize = TruncateAt.END
-        recyclerMain.layoutManager = LinearLayoutManager(context)
-       recyclerMain.adapter = mainAdapter
-        recyclerMain.itemDecorate()
-       // itemDecorate()
+
+        recyclerMain.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = mainAdapter
+            itemDecorate()
+        }
 
     }
 

@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.olehmesh.newsfeed.R
 import com.olehmesh.newsfeed.databinding.FragmentDetailBinding
+import com.olehmesh.newsfeed.utils.Constants
 import com.olehmesh.repository.models.NewsModel
 import kotlinx.android.synthetic.main.fragment_detail.*
 
@@ -27,10 +28,10 @@ class DetailFragment : Fragment() {
                 DataBindingUtil.inflate(inflater, R.layout.fragment_detail, container, false)
 
         val detail = NewsModel(
-                        requireArguments().getString("title"),
-                        requireArguments().getString("image"),
-                        requireArguments().getString("text")
-               )
+            requireArguments().getString(Constants.TITLE_NEWS),
+            requireArguments().getString(Constants.IMAGE_NEWS),
+            requireArguments().getString(Constants.DESC_NEWS)
+        )
         binding.data = detail
         return binding.root
     }
@@ -40,7 +41,9 @@ class DetailFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         Glide.with(this).asBitmap()
-            .load(requireArguments().getString("image")?.replace("http://", "https://"))
+            .load(
+                requireArguments().getString(Constants.IMAGE_NEWS)?.replace("http://", "https://")
+            )
             .apply(RequestOptions().encodeQuality(100))
             .into(ivDetailLarge)
 
