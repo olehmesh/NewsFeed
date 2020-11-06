@@ -16,13 +16,11 @@
         android:layout_height="match_parent"
         tools:context=".presentation.MainActivity">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgDetail"
-            android:layout_width="281dp"
+            android:layout_width="match_parent"
             android:layout_height="251dp"
             android:layout_marginTop="10dp"
-            app:civ_border_color="#1D5E21"
-            app:civ_border_width="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

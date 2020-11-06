@@ -1,6 +1,8 @@
 package com.olehmesh.newsfeed.extensions
 
 import android.graphics.drawable.Drawable
+import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -22,12 +24,12 @@ fun CircleImageView.setLogo(
 
 }
 
-fun CircleImageView.setImageDetail(imgDetailURL: String?) {
+fun AppCompatImageView.setImageDetail(imgDetailURL: String?) {
         Glide.with(this).asBitmap()
                 .load(imgDetailURL)
                 .apply(RequestOptions().encodeQuality(100))
                 .placeholder(R.drawable.ic_placeholder)
                 .error(R.drawable.ic_placeholder)
-            .into(this)
+                .into(this)
 
 }
