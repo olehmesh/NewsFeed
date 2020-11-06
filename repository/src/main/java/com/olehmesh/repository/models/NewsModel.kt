@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName
 data class NewsModel(
 
         @SerializedName("title")
-        var title: String? = "",
+        var title: String?,
 
         @SerializedName("image")
-        var image_url: String? = "",
+        var image_url: String?,
 
         @SerializedName("teaser")
-        var textDetail: String? = ""
+        var textDetail: String?
 )
