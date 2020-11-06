@@ -14,13 +14,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbars="vertical"
         tools:context=".presentation.MainActivity">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivDetailLarge"
+            android:id="@+id/imgDetail"
             android:layout_width="281dp"
             android:layout_height="251dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="10dp"
             app:civ_border_color="#1D5E21"
             app:civ_border_width="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -33,7 +34,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvDetailName"
             android:layout_width="415dp"
-            android:layout_height="133dp"
+            android:layout_height="match_parent"
             android:text='@{String.valueOf(data.title)}'
             android:textAlignment="center"
             android:textSize="35sp"
@@ -41,22 +42,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivDetailLarge"
+            app:layout_constraintTop_toBottomOf="@+id/imgDetail"
             app:layout_constraintVertical_bias="0.475" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvText"
-            android:layout_width="393dp"
-            android:layout_height="243dp"
+            android:layout_width="391dp"
+            android:layout_height="match_parent"
             android:text='@{String.valueOf(data.text)}'
             android:textAlignment="center"
             android:textSize="35sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/ivDetailLarge"
-            app:layout_constraintVertical_bias="0.964" />
+            app:layout_constraintTop_toBottomOf="@+id/imgDetail"
+            app:layout_constraintVertical_bias="0.943" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

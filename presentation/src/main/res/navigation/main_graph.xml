@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/fragment_main"
-        android:name="com.olehmesh.newsfeed.fragments.MainFragment"
+        android:name="com.olehmesh.newsfeed.fragments.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
         <action
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/fragment_detail"
-        android:name="com.olehmesh.newsfeed.fragments.DetailFragment"
+        android:name="com.olehmesh.newsfeed.fragments.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
     </fragment>

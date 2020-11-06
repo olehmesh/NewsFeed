@@ -38,7 +38,7 @@ class KeyedDataSource(context: CoroutineContext) : ItemKeyedDataSource<String, N
                 }
 
             } catch (exception: Exception) {
-                Log.e("Paging", "No data")
+                Log.e("Paging: Load Initial", "No data")
             }
 
         }
@@ -59,7 +59,8 @@ class KeyedDataSource(context: CoroutineContext) : ItemKeyedDataSource<String, N
                 }
 
             } catch (exception: Exception) {
-                Log.e("Paging", "No data")
+                Log.e("Paging: Load After", "No data")
+
             }
 
         }
@@ -77,7 +78,7 @@ class KeyedDataSource(context: CoroutineContext) : ItemKeyedDataSource<String, N
                 }
 
             } catch (exception: Exception) {
-                Log.e("Paging", "No data")
+                Log.e("Paging: Load Before", "No data")
             }
 
         }

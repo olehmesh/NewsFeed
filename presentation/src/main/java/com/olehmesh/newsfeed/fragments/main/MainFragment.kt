@@ -1,4 +1,4 @@
-package com.olehmesh.newsfeed.fragments
+package com.olehmesh.newsfeed.fragments.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
