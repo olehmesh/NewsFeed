@@ -11,5 +11,5 @@ data class NewsModel(
         var image_url: String? = "",
 
         @SerializedName("teaser")
-        var text: String? = ""
+        var textDetail: String? = ""
 )

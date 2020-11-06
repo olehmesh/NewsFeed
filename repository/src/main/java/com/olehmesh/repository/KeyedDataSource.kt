@@ -16,8 +16,7 @@ class KeyedDataSource(context: CoroutineContext) : ItemKeyedDataSource<String, N
     @Inject
     lateinit var api: ApiService
 
-    private val job = Job()
-    private val scope = CoroutineScope(context + job)
+    private val scope = CoroutineScope(context + Job())
 
     override fun loadInitial(
         params: LoadInitialParams<String?>,
@@ -38,7 +37,7 @@ class KeyedDataSource(context: CoroutineContext) : ItemKeyedDataSource<String, N
                 }
 
             } catch (exception: Exception) {
-                Log.e("Paging: Load Initial", "No data")
+                Log.e(R.string.load_initial.toString(), R.string.no_data.toString())
             }
 
         }
@@ -59,8 +58,7 @@ class KeyedDataSource(context: CoroutineContext) : ItemKeyedDataSource<String, N
                 }
 
             } catch (exception: Exception) {
-                Log.e("Paging: Load After", "No data")
-
+                Log.e(R.string.load_after.toString(), R.string.no_data.toString())
             }
 
         }
@@ -78,7 +76,7 @@ class KeyedDataSource(context: CoroutineContext) : ItemKeyedDataSource<String, N
                 }
 
             } catch (exception: Exception) {
-                Log.e("Paging: Load Before", "No data")
+                Log.e(R.string.load_before.toString(), R.string.no_data.toString())
             }
 
         }

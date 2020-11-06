@@ -1,0 +1,8 @@
+<resources>
+    <string name="no_data">No Data</string>
+
+    <string name="load_initial">Paging: Load Initial</string>
+    <string name="load_after">Paging: Load After</string>
+    <string name="load_before">Paging: Load Before</string>
+
+</resources>

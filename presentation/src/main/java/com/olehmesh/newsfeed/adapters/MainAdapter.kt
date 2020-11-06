@@ -44,7 +44,7 @@ class MainAdapter : PagedListAdapter<NewsModel, MainAdapter.ItemViewHolder>(Diff
             val bundle = Bundle()
 
             bundle.putString(Constants.TITLE_NEWS, mList?.title)
-            bundle.putString(Constants.DESC_NEWS, mList?.text)
+            bundle.putString(Constants.DESC_NEWS, mList?.textDetail)
             bundle.putString(Constants.IMAGE_NEWS, mList?.image_url)
 
             navController.navigate(

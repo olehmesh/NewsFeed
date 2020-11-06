@@ -14,7 +14,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
         tools:context=".presentation.MainActivity">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -24,39 +23,36 @@
             android:layout_marginTop="10dp"
             app:civ_border_color="#1D5E21"
             app:civ_border_width="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.006"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDetailName"
-            android:layout_width="415dp"
-            android:layout_height="match_parent"
+            android:id="@+id/tvDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:text='@{String.valueOf(data.title)}'
             android:textAlignment="center"
-            android:textSize="35sp"
-            app:layout_constraintBottom_toTopOf="@+id/tvText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgDetail"
-            app:layout_constraintVertical_bias="0.475" />
+            android:textSize="@dimen/large_size_text"
+            app:layout_constraintTop_toBottomOf="@id/imgDetail" />
+
+        <View
+            android:id="@+id/dividerView"
+            style="@style/Divider"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDetailTitle"></View>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvText"
-            android:layout_width="391dp"
-            android:layout_height="match_parent"
-            android:text='@{String.valueOf(data.text)}'
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@{String.valueOf(data.textDetail)}"
             android:textAlignment="center"
-            android:textSize="35sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgDetail"
-            app:layout_constraintVertical_bias="0.943" />
+            android:textSize="@dimen/normal_size_text"
+            app:layout_constraintTop_toBottomOf="@id/dividerView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
