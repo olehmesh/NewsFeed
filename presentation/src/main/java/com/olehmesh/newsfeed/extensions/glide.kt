@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.olehmesh.newsfeed.R
 import de.hdodenhof.circleimageview.CircleImageView
 
 @BindingAdapter("picture", "errorImage")
@@ -22,9 +23,11 @@ fun CircleImageView.setLogo(
 }
 
 fun CircleImageView.setImageDetail(imgDetailURL: String?) {
-    Glide.with(this).asBitmap()
-            .load(imgDetailURL)
-            .apply(RequestOptions().encodeQuality(100))
+        Glide.with(this).asBitmap()
+                .load(imgDetailURL)
+                .apply(RequestOptions().encodeQuality(100))
+                .placeholder(R.drawable.ic_placeholder)
+                .error(R.drawable.ic_placeholder)
             .into(this)
 
 }
