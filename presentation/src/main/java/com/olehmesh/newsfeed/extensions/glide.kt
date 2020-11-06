@@ -13,7 +13,7 @@ fun CircleImageView.setLogo(
 ) {
 
     Glide.with(context)
-            .load(toHttps(logoURL))
+            .load(logoURL)
             .apply(RequestOptions().encodeQuality(100))
             .placeholder(errorImage)
             .error(errorImage)
@@ -23,12 +23,8 @@ fun CircleImageView.setLogo(
 
 fun CircleImageView.setImageDetail(imgDetailURL: String?) {
     Glide.with(this).asBitmap()
-            .load(toHttps(imgDetailURL))
+            .load(imgDetailURL)
             .apply(RequestOptions().encodeQuality(100))
             .into(this)
 
-}
-
-fun toHttps(urlHttp: String?): String? {
-    return urlHttp?.replace("http://", "https://")
 }
