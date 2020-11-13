@@ -10,6 +10,7 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.olehmesh.newsfeed.R
 import com.olehmesh.newsfeed.databinding.MainListItemBinding
+import com.olehmesh.newsfeed.extensions.setLogo
 import com.olehmesh.newsfeed.utils.Constants
 import com.olehmesh.newsfeed.utils.DiffUtilCallBack
 import com.olehmesh.repository.models.NewsModel
@@ -65,8 +66,9 @@ class MainAdapter : PagedListAdapter<NewsModel, MainAdapter.ItemViewHolder>(Diff
 
         fun bind(item: NewsModel) {
 
-            binding.data = item
-            binding.executePendingBindings()
+            binding.ivAvatar.setLogo(item.image_url)
+            binding.tvDesc.text = item.textDetail
+            binding.tvTitle.text = item.title
 
         }
 

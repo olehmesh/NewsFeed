@@ -2,31 +2,29 @@ package com.olehmesh.newsfeed.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.annotation.Nullable
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import java.lang.reflect.InvocationTargetException
 import java.lang.reflect.Method
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
-open class BaseFragment<T : ViewBinding?> : Fragment() {
+
+open class BaseActivity<T : ViewBinding?> : AppCompatActivity() {
+
     var binding: T? = null
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+
+    override fun onCreate(@Nullable savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
         val superclass: Type = javaClass.genericSuperclass!!
         val aClass = (superclass as ParameterizedType).actualTypeArguments[0] as Class<*>
+
         try {
-            val method: Method = aClass.getDeclaredMethod(
-                "inflate",
-                LayoutInflater::class.java,
-                ViewGroup::class.java,
-                Boolean::class.javaPrimitiveType
-            )
-            binding = method.invoke(null, layoutInflater, container, false) as T?
+            val method: Method = aClass.getDeclaredMethod("inflate", LayoutInflater::class.java)
+            binding = method.invoke(null, layoutInflater) as T?
+            setContentView(binding!!.root)
         } catch (e: NoSuchMethodException) {
             e.printStackTrace()
         } catch (e: IllegalAccessException) {
@@ -34,6 +32,6 @@ open class BaseFragment<T : ViewBinding?> : Fragment() {
         } catch (e: InvocationTargetException) {
             e.printStackTrace()
         }
-        return binding!!.root
     }
+
 }

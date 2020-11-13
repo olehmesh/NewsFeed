@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <data>
-
-        <variable
-            name="data"
-            type="com.olehmesh.repository.models.NewsModel" />
-
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".presentation.MainActivity">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgDetail"
@@ -30,7 +18,7 @@
             android:id="@+id/tvDetailTitle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text='@{String.valueOf(data.title)}'
+            android:text="title"
             android:textAlignment="center"
             android:textSize="@dimen/large_size_text"
             app:layout_constraintTop_toBottomOf="@id/imgDetail" />
@@ -49,10 +37,8 @@
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@{String.valueOf(data.textDetail)}"
+            android:text="text"
             android:textAlignment="center"
             android:textSize="@dimen/normal_size_text"
             app:layout_constraintTop_toBottomOf="@id/dividerView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</layout>
