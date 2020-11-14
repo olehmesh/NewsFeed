@@ -10,7 +10,6 @@ import java.lang.reflect.Method
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
-
 open class BaseActivity<T : ViewBinding?> : AppCompatActivity() {
 
     var binding: T? = null
@@ -25,11 +24,7 @@ open class BaseActivity<T : ViewBinding?> : AppCompatActivity() {
             val method: Method = aClass.getDeclaredMethod("inflate", LayoutInflater::class.java)
             binding = method.invoke(null, layoutInflater) as T?
             setContentView(binding!!.root)
-        } catch (e: NoSuchMethodException) {
-            e.printStackTrace()
-        } catch (e: IllegalAccessException) {
-            e.printStackTrace()
-        } catch (e: InvocationTargetException) {
+        } catch (e: Exception) {
             e.printStackTrace()
         }
     }

@@ -27,11 +27,7 @@ open class BaseFragment<T : ViewBinding?> : Fragment() {
                 Boolean::class.javaPrimitiveType
             )
             binding = method.invoke(null, layoutInflater, container, false) as T?
-        } catch (e: NoSuchMethodException) {
-            e.printStackTrace()
-        } catch (e: IllegalAccessException) {
-            e.printStackTrace()
-        } catch (e: InvocationTargetException) {
+        } catch (e: Exception) {
             e.printStackTrace()
         }
         return binding!!.root
